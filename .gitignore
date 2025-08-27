@@ -1,2 +1,8 @@
+# Logic Pro
 *.logicx
+
+# Figma
+*.fig
+
+# Mac
 .DS_Store
