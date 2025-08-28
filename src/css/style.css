@@ -44,15 +44,13 @@ button:hover {
 }
 
 h1 {
-    /* font-size: 96px; */
-    font-size: clamp(48px, 8vw, 96px);
+    font-size: 96px;
     font-weight: 300;
     margin-bottom: 20px;
 }
 
 p {
-    /* font-size: 20px; */
-    font-size: clamp(14px, 2vw, 20px);
+    font-size: 20px;
     font-weight: 400;
 }
 
@@ -129,7 +127,6 @@ p {
 }
 
 .clock {
-    width: 100%;
     position: relative;
 }
 
