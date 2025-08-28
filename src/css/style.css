@@ -7,7 +7,7 @@
     --beige: #f1f1e8;
 }
 
-/* reset css */
+/* reset */
 *,
 *::before,
 *::after {
@@ -44,7 +44,6 @@ button:hover {
 }
 
 /* pc */
-
 h1 {
     font-size: 96px;
     font-weight: 300;
@@ -185,6 +184,7 @@ p {
     height: 0;
 }
 
+/* tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     h1 {
         font-size: 82px;
@@ -222,6 +222,7 @@ p {
     }
 }
 
+/* mobile */
 @media screen and (max-width: 767px) {
     h1 {
         font-size: 48px;
