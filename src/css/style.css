@@ -43,6 +43,8 @@ button:hover {
     opacity: 0.6;
 }
 
+/* pc */
+
 h1 {
     font-size: 96px;
     font-weight: 300;
@@ -85,29 +87,30 @@ p {
     margin-bottom: 45px;
 }
 
-.slidebar {
+.intensity .slidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.operation {
+.intensity .operation {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
 
-.operation .minus, .operation .bar {
+.intensity .minus,
+.intensity .bar {
     margin-right: 33px;
 }
 
-.operation .bar .line {
+.intensity .line {
     width: 240px;
     border: 1px solid var(--black);
     position: relative;
 }
 
-.line .circle {
+.intensity .circle {
     width: 10px;
     height: 10px;
     background-color: var(--blue);
@@ -116,13 +119,13 @@ p {
     left: -5px;
 }
 
-.ticks {
+.intensity .ticks {
     display: flex;
     font-size: 16px;
     font-weight: 300;
 }
 
-.ticks li:not(:last-child) {
+.intensity .ticks li:not(:last-child) {
     margin-right: 37px;
 }
 
@@ -136,23 +139,24 @@ p {
     border-radius: 50%;
     background-color: var(--gray);
     position: absolute;
-    /* 233 - 7 */
-    top: 226px;
-    left: 226px;
+    top: 50%;
+    left: 50%;
+    translate: -7px -7px;
     z-index: 10;
+}
+
+#hour, #minute, #second {
+    background-color: var(--orange);
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 #hour {
     width: 130px;
     height: 6px;
     border-radius: 3px;
-    background-color: var(--orange);
-    position: absolute;
-
-    /* 233 - 3 */
-    top: 230px;
-    left: 230px;
-
+    translate: -3px -3px;
     transform: rotate(110deg);
     transform-origin: 3px 3px;
 }
@@ -161,13 +165,7 @@ p {
     width: 190px;
     height: 6px;
     border-radius: 3px;
-    background-color: var(--orange);
-    position: absolute;
-    
-    /* 233 - 3 */
-    top: 230px;
-    left: 230px;
-    
+    translate: -3px -3px;
     transform: rotate(5deg);
     transform-origin: 3px 3px;
 }
@@ -176,13 +174,115 @@ p {
     width: 220px;
     height: 4px;
     border-radius: 2px;
-    background-color: var(--orange);
-    position: absolute;
-    
-    /* 233 - 2 */
-    top: 231px;
-    left: 231px;
-
+    translate: -2px -2px;
     transform: rotate(45deg);
     transform-origin: 2px 2px;
+}
+
+.mobile {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 82px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .text {
+        margin-right: 0;
+        margin-left: 10px;
+
+    }
+
+    .text .title {
+        margin-bottom: 100px;
+    }
+
+    .intensity p {
+        margin-bottom: 30px;
+    }
+
+    .operation {
+        margin-bottom: 10px;
+    }
+
+    .operation .minus, .operation .bar {
+        margin-right: 25px;
+    }
+
+    .clock {
+        scale: 60%;
+        margin: -50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 48px;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .container {
+        width: 100vw;
+        height: 100vh;
+        padding: 60px 0;
+        margin: 0 0;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    .text {
+        margin: 0;
+    }
+    
+    .text .title {
+        margin-bottom: 0;
+        text-align: center;
+    }
+    
+    .pc {
+        display: none;
+    }
+    
+    .clock {
+        position: relative;
+        scale: 60%;
+    }
+    
+    .mobile {
+        opacity: 100;
+        width: 100%;
+        height: 100%;
+    }
+
+    .intensity p {
+        margin-bottom: 18px;
+    }
+    
+    .intensity .operation {
+        margin-bottom: 8px;
+    }
+    
+    .intensity .minus,
+    .intensity .bar {
+        margin-right: 22px;
+    }
+    
+    .intensity .line {
+        width: 170px;
+        border: 1px solid var(--black);
+    }
+    
+    .intensity .ticks li:not(:last-child) {
+        margin-right: 24px;
+    }
 }
