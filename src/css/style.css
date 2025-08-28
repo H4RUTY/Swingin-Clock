@@ -1,0 +1,191 @@
+/* variables */
+:root {
+    --black: #1f1f1f;
+    --gray: #c6c6c6;
+    --orange: #f49546;
+    --blue: #5795f2;
+    --beige: #f1f1e8;
+}
+
+/* reset css */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: "IBM Plex Mono", monospace;
+    background-color: var(--beige);
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    all: unset;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.6;
+}
+
+h1 {
+    /* font-size: 96px; */
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+p {
+    /* font-size: 20px; */
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 400;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text .title {
+    margin-bottom: 120px;
+}
+
+.intensity {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intensity p {
+    margin-bottom: 45px;
+}
+
+.slidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.operation {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.operation .minus, .operation .bar {
+    margin-right: 33px;
+}
+
+.operation .bar .line {
+    width: 240px;
+    border: 1px solid var(--black);
+    position: relative;
+}
+
+.line .circle {
+    width: 10px;
+    height: 10px;
+    background-color: var(--blue);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+.ticks {
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.ticks li:not(:last-child) {
+    margin-right: 37px;
+}
+
+.clock {
+    width: 100%;
+    position: relative;
+}
+
+#pivot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--gray);
+    position: absolute;
+    /* 233 - 7 */
+    top: 226px;
+    left: 226px;
+    z-index: 10;
+}
+
+#hour {
+    width: 130px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--orange);
+    position: absolute;
+
+    /* 233 - 3 */
+    top: 230px;
+    left: 230px;
+
+    transform: rotate(110deg);
+    transform-origin: 3px 3px;
+}
+
+#minute {
+    width: 190px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--orange);
+    position: absolute;
+    
+    /* 233 - 3 */
+    top: 230px;
+    left: 230px;
+    
+    transform: rotate(5deg);
+    transform-origin: 3px 3px;
+}
+
+#second {
+    width: 220px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--orange);
+    position: absolute;
+    
+    /* 233 - 2 */
+    top: 231px;
+    left: 231px;
+
+    transform: rotate(45deg);
+    transform-origin: 2px 2px;
+}
