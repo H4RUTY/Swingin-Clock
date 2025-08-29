@@ -16,7 +16,7 @@ mkdir -p "$OUTPUT_DIR"
 # 8秒ごとに分割, wav変換
 for i in {0..5}; do
     START=$((i * 8))
-    OUT_FILE=$(printf "%s/swing%02d.wav" "$OUTPUT_DIR" $((i+1)))
+    OUT_FILE=$(printf "%s/swing%02d.wav" "$OUTPUT_DIR" $((i)))
     ffmpeg -y -i "$INPUT_FILE" -ss $START -t 8 "$OUT_FILE"
 done
 

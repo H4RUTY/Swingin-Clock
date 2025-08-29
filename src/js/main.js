@@ -25,4 +25,4 @@ async function playLoopingWav(url) {
 }
 
 // 8秒のwavファイルを指定
-playLoopingWav("audio/swing04.wav");
+playLoopingWav("audio/swing05.wav");
