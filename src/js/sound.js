@@ -73,7 +73,12 @@ minusBtn.addEventListener("click", () => {
 window.addEventListener("resize", updatePosition);
 
 // -- initial processing --
-document.getElementById("gotIt").addEventListener("click", () => {
+document.getElementById("gotIt").addEventListener("click", async () => {
+    // countermeasure for strict browser
+    if (audioCtx.state === "suspended") {
+        await audioCtx.resume();
+    }
+    
     const modal = document.querySelector(".modal");
     modal.classList.add("hidden");
     setTimeout(() => {
