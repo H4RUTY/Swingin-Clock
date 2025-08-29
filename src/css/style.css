@@ -140,7 +140,7 @@ p {
     align-items: center;
 }
 
-.intensity .minus,
+.intensity #minus,
 .intensity .bar {
     margin-right: 33px;
 }
@@ -157,7 +157,6 @@ p {
     background-color: var(--blue);
     position: absolute;
     top: -5px;
-    left: -5px;
 }
 
 .intensity .ticks {
@@ -167,7 +166,7 @@ p {
 }
 
 .intensity .ticks li:not(:last-child) {
-    margin-right: 37px;
+    margin-right: 38px;
 }
 
 .clock {
@@ -198,7 +197,7 @@ p {
     height: 6px;
     border-radius: 3px;
     translate: -3px -3px;
-    transform: rotate(110deg);
+    transform: rotate(-90deg);
     transform-origin: 3px 3px;
 }
 
@@ -207,7 +206,7 @@ p {
     height: 6px;
     border-radius: 3px;
     translate: -3px -3px;
-    transform: rotate(5deg);
+    transform: rotate(-90deg);
     transform-origin: 3px 3px;
 }
 
@@ -216,7 +215,7 @@ p {
     height: 4px;
     border-radius: 2px;
     translate: -2px -2px;
-    transform: rotate(45deg);
+    transform: rotate(-90deg);
     transform-origin: 2px 2px;
 }
 
@@ -248,7 +247,7 @@ p {
         margin-bottom: 10px;
     }
 
-    .operation .minus, .operation .bar {
+    .operation #minus, .operation .bar {
         margin-right: 25px;
     }
 
@@ -302,7 +301,7 @@ p {
         margin-bottom: 8px;
     }
     
-    .intensity .minus,
+    .intensity #minus,
     .intensity .bar {
         margin-right: 22px;
     }

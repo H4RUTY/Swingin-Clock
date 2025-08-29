@@ -1,28 +1,19 @@
-document.getElementById("gotIt").addEventListener("click", async () => {
-    const modal = document.querySelector(".modal")
-    modal.classList.add("hidden");
-    setTimeout(() => {
-        modal.style.display = "none";
-    }, 1000);
-});
+const hourNeedle = document.getElementById("hour");
+const minuteNeedle = document.getElementById("minute");
+const secondNeedle = document.getElementById("second");
 
+function showClock() {
+    const date = new Date();
+    const h = date.getHours();
+    const m = date.getMinutes();
+    const s = date.getSeconds();
 
+    hourNeedle.style.transform = `rotate(${h * 30 + m/2 - 90}deg)`;
+    minuteNeedle.style.transform = `rotate(${6 * m - 90}deg)`;
+    secondNeedle.style.transform = `rotate(${6 * s - 90}deg)`;
 
-// AudioContextを作成
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-// wavファイルをロードしてループ再生
-async function playLoopingWav(url) {
-    const response = await fetch(url);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-
-    const source = audioCtx.createBufferSource();
-    source.buffer = audioBuffer;
-    source.loop = true;          // ループ再生
-    source.connect(audioCtx.destination);
-    source.start(0);
+    const ms = date.getMilliseconds();
+    setTimeout(showClock, 1000 - ms);
 }
 
-// 8秒のwavファイルを指定
-playLoopingWav("audio/swing05.wav");
+showClock();
