@@ -1,6 +1,7 @@
 /* variables */
 :root {
     --black: #1f1f1f;
+    --white: #fbfaf9;
     --gray: #c6c6c6;
     --orange: #f49546;
     --blue: #5795f2;
@@ -63,6 +64,47 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(20px);
+    z-index: 100;
+
+    transition: opacity 1s ease;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 2rem;
+    text-align: center;
+    max-width: 300px;
+    border-radius: 14px;
+}
+
+.modal-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: var(--blue);
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
 }
 
 .text {
@@ -178,12 +220,6 @@ p {
     transform-origin: 2px 2px;
 }
 
-.mobile {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
 /* tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     h1 {
@@ -230,6 +266,7 @@ p {
     
     p {
         font-size: 16px;
+        font-weight: 300;
     }
     
     .container {
@@ -237,12 +274,13 @@ p {
         height: 100vh;
         padding: 60px 0;
         margin: 0 0;
-        justify-content: space-between;
         flex-direction: column;
     }
     
     .text {
         margin: 0;
+        position: relative;
+        gap: 420px;
     }
     
     .text .title {
@@ -250,19 +288,10 @@ p {
         text-align: center;
     }
     
-    .pc {
-        display: none;
-    }
-    
     .clock {
-        position: relative;
-        scale: 60%;
-    }
-    
-    .mobile {
-        opacity: 100;
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        scale: 55%;
+        margin-top: 40px;
     }
 
     .intensity p {
