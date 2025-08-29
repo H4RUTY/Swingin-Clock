@@ -1,5 +1,5 @@
 ![mocup](public/mocup.png) 
 
-# 🕺 Swingin' Clock 🕙
+# Swingin' Clock 🕺
 
-You can check out the deployed version here 👉 [View the Site](https://h4ruty.github.io/Swingin-Clock/)
+You can check out the deployed version here 👉 [Check it out!](https://h4ruty.github.io/Swingin-Clock/)
