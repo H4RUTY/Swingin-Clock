@@ -279,7 +279,7 @@ p {
     .text {
         margin: 0;
         position: relative;
-        gap: 380px;
+        gap: 280px;
     }
     
     .text .title {
@@ -289,8 +289,8 @@ p {
     
     .clock {
         position: absolute;
-        scale: 55%;
-        margin-top: 40px;
+        scale: 40%;
+        margin-top: 50px;
     }
 
     .intensity p {
